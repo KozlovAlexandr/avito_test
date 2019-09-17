@@ -14,7 +14,7 @@ def try_insert(p_id, value, array):
     for param in array['params']:
         if param['id'] == p_id:
 
-            if param.get('values') is None :
+            if param.get('values') is None:
                 param['value'] = value
             elif type(value) is str:
                 raise
@@ -37,4 +37,5 @@ try:
 except:
     json.dump({'error': {'message': 'Входные файлы некорректны'}}, open('error.json', 'w'), ensure_ascii=False, indent=4)
 
-json.dump(to_fill, open("StructureWithValues.json", "w"), ensure_ascii=False, indent=4, sort_keys=True)
+else:
+    json.dump(to_fill, open("StructureWithValues.json", "w"), ensure_ascii=False, indent=4, sort_keys=True)
