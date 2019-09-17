@@ -26,10 +26,11 @@ def try_insert(p_id, value, array):
                 try_insert(p_id, value, d)
 
 
-to_fill = json.load(open("TestcaseStructure.json"))
-values = json.load(open("Values.json"))
-
 try:
+
+    to_fill = json.load(open("TestcaseStructure.json"))
+    values = json.load(open("Values.json"))
+
     for obj in values['values']:
         try_insert(obj['id'], obj['value'], to_fill)
 
